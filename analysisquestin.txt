@@ -1,0 +1,150 @@
+1. Does trip distance significantly affect fare amount?
+Results
+Pearson Correlation = 0.0168
+p-value = 0.8132
+Covariance = 11.16
+Interpretation
+
+The Pearson correlation is extremely close to 0, indicating almost no linear relationship between trip distance and fare amount.
+
+Since the p-value (0.8132) is much greater than 0.05, the relationship is not statistically significant.
+
+Conclusion
+
+❌ Trip distance does not significantly affect fare amount in this dataset.
+
+2. Are premium rides statistically more expensive than economy rides?
+Descriptive Statistics
+Ride Category	Average Fare
+Economy	₹257.75
+Premium	₹252.46
+Shared	₹271.41
+T-Test Result
+t-statistic = -0.406
+p-value = 0.685
+ANOVA Result
+F-statistic = 0.928
+p-value = 0.397
+Interpretation
+
+Both p-values are greater than 0.05.
+
+Conclusion
+
+❌ There is no statistical evidence that Premium rides are more expensive than Economy rides.
+
+3. Is there a relationship between surge pricing and customer ratings?
+Spearman Correlation
+Correlation = -0.047
+p-value = 0.508
+Interpretation
+
+The correlation is very weak and negative.
+
+The p-value is much greater than 0.05.
+
+Conclusion
+
+❌ Surge pricing does not significantly influence customer ratings.
+
+4. Do peak-hour rides differ in revenue compared to non-peak rides?
+Average Fare
+Ride Time	Average Fare
+Peak	₹257.07
+Non-Peak	₹263.75
+A/B Test (Independent t-test)
+t-statistic = 0.596
+p-value = 0.552
+Interpretation
+
+The fare difference is small and statistically insignificant.
+
+Conclusion
+
+❌ Peak-hour rides do not generate significantly different revenue compared to non-peak rides.
+
+5. Are there unusual fare values that indicate anomalies or pricing errors?
+Outlier Detection
+IQR Method
+Outliers detected = 1
+Z-Score Method
+Outliers detected = 0
+Interpretation
+
+Only one fare value lies outside the normal IQR range.
+
+No observations exceed the ±3 z-score threshold.
+
+Conclusion
+
+✅ Dataset contains one mild outlier but no severe pricing anomalies.
+
+6. Can ride demand probabilities be estimated for different ride categories?
+Ride Category Probabilities
+Category	Probability
+Economy	0.41 (41%)
+Shared	0.30 (30%)
+Premium	0.29 (29%)
+Interpretation
+
+Basic probability:
+
+P(Economy)=0.41
+P(Shared)=0.30
+P(Premium)=0.29
+
+Economy rides have the highest demand.
+
+Conclusion
+
+✅ Ride demand probabilities can be estimated, and Economy rides are the most frequently selected category.
+
+7. Which operational factors are most strongly related to business performance?
+Correlation Findings
+Variables	Relationship
+Trip Distance ↔ Fare	Very Weak
+Surge ↔ Rating	Very Weak Negative
+Fare ↔ Rating	Weak
+Distance ↔ Surge	Weak
+Eigenvalue Analysis
+
+Eigenvalues of correlation matrix:
+
+[0.886,1.106,0.983,1.026]
+Interpretation
+
+All eigenvalues are close to 1.
+
+This indicates:
+
+No dominant factor drives business performance.
+Variables are largely independent.
+Multicollinearity is low.
+Conclusion
+
+❌ No single operational factor strongly influences overall performance.
+
+8. Can statistical evidence support pricing or service improvements?
+Statistical Findings
+Distance does not significantly affect fare.
+Premium rides are not significantly more expensive.
+Surge pricing does not affect ratings.
+Peak hours do not significantly increase revenue.
+Only one mild fare outlier exists.
+Confidence Interval Perspective
+
+Using bootstrapping and confidence intervals, the average fare remains relatively stable across repeated samples.
+
+Recommendations
+
+✅ Review pricing strategy for Premium rides.
+
+✅ Consider dynamic pricing improvements because current surge pricing shows little impact.
+
+✅ Focus on service quality rather than fare adjustments since ratings are not strongly linked to price.
+
+✅ Use customer behavior features (location, demand, trip type) for better pricing models.
+
+Overall Business Conclusion
+
+The statistical analysis suggests that the current ride pricing system shows weak relationships among distance, fare, surge pricing, and customer ratings. Most hypothesis tests failed to reject the null hypothesis (p > 0.05), indicating that the observed differences are likely due to random variation. Therefore, the company should investigate additional factors such as route, traffic, customer preferences, and location-based demand to improve pricing and operational efficiency.
